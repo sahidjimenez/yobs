@@ -12,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { EditComponent } from './components/edit/edit.component';
+import { CrearComponent } from './components/crear/crear.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditComponent } from './components/edit/edit.component';
     NotFoundComponent,
     LoginComponent,
     DetallesComponent,
-    EditComponent
+    EditComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,
