@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router,ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  idReceta:String;
+
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
 
   ngOnInit() {
+    this.idReceta = this.route.snapshot.params['id'];
   }
 
 }
