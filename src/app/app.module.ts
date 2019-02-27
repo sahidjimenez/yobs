@@ -14,6 +14,15 @@ import { DetallesComponent } from './components/detalles/detalles.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CrearComponent } from './components/crear/crear.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { AuthService } from './services/auth.service';
+
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +39,12 @@ import { CrearComponent } from './components/crear/crear.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
