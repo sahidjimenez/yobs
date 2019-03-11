@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   onClickGoogleLogin(){
     this.authService.loginGoogle()
     .then((res) =>{
+      //console.log(res);
       this.router.navigate(['/admin']);
     }).catch(err => console.log(err.message));
   }

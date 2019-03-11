@@ -11,17 +11,18 @@ import { MisTrabajosComponent } from './components/mis-trabajos/mis-trabajos.com
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import{ AuthGuard } from'./guards/auth.guard';
 
 const routes: Routes = [
 
   { path: '', component:HomeComponent},
   { path: 'about', component:AboutComponent},
-  { path: 'admin', component:AdminComponent},
-  { path: 'detalles/:id', component:DetallesComponent},
-  { path: 'edit/:id', component:EditComponent},
+  { path: 'admin', component:AdminComponent, canActivate:[AuthGuard]},
+  { path: 'detalles/:id', component:DetallesComponent, canActivate:[AuthGuard]},
+  { path: 'edit/:id', component:EditComponent, canActivate:[AuthGuard]},
   { path: 'login', component:LoginComponent},
-  { path: 'crear', component:CrearComponent},
-  { path: 'mis-trabajos', component:MisTrabajosComponent},
+  { path: 'crear', component:CrearComponent, canActivate:[AuthGuard]},
+  { path: 'mis-trabajos', component:MisTrabajosComponent, canActivate:[AuthGuard]},
   { path: '**', component:NotFoundComponent}
 
 ];
