@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.onComprobarUserLogin();
+
   }
 
   onComprobarUserLogin(){
@@ -33,10 +34,12 @@ export class NavbarComponent implements OnInit {
         this.userEmail = auth.email;
         this.userPicture = auth.photoURL;
         this.userId = auth.uid;
+        console.log(this.userId);
       }else{
         this.isLogin = false;
       }
     })
+
 
   }
 

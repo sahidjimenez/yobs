@@ -17,11 +17,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onClickGoogleLogin(){
     this.authService.loginGoogle()
     .then((res) =>{
       //console.log(res);
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/feed']);
     }).catch(err => console.log(err.message));
   }
 }

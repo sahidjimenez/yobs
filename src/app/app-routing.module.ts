@@ -8,9 +8,9 @@ import { DetallesComponent } from './components/detalles/detalles.component';
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { MisTrabajosComponent } from './components/mis-trabajos/mis-trabajos.component';
-
+import { FeedComponent } from './components/feed/feed.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { CrearUsuarioComponent } from "./components/crear-usuario/crear-usuario.component";
 import{ AuthGuard } from'./guards/auth.guard';
 
 const routes: Routes = [
@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: '', component:HomeComponent},
   { path: 'about', component:AboutComponent},
   { path: 'admin', component:AdminComponent, canActivate:[AuthGuard]},
+  { path: 'feed',component:FeedComponent,canActivate:[AuthGuard]},
+  { path: 'crear-usuario',component:CrearUsuarioComponent,canActivate:[AuthGuard]},
   { path: 'detalles/:id', component:DetallesComponent, canActivate:[AuthGuard]},
   { path: 'edit/:id', component:EditComponent, canActivate:[AuthGuard]},
   { path: 'login', component:LoginComponent},

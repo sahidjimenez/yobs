@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,8 @@ import { AuthService } from './services/auth.service';
 
 import { environment } from '../environments/environment';
 import { AuthGuard }from'./guards/auth.guard';
+import { FeedComponent } from './components/feed/feed.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,17 @@ import { AuthGuard }from'./guards/auth.guard';
     LoginComponent,
     DetallesComponent,
     EditComponent,
-    CrearComponent
+    CrearComponent,
+    FeedComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
