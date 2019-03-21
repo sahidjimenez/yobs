@@ -19,7 +19,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
+
+//servicios
 import { AuthService } from './services/auth.service';
+import { DatosService } from "./services/datos.service";
+
 
 import { environment } from '../environments/environment';
 import { AuthGuard }from'./guards/auth.guard';
@@ -50,7 +54,7 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
     AngularFirestoreModule,
     FormsModule
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService,AuthGuard,DatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

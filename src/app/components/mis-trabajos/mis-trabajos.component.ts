@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+//servicios
+import { DatosService } from "../../services/datos.service";
+
 @Component({
   selector: 'app-mis-trabajos',
   templateUrl: './mis-trabajos.component.html',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisTrabajosComponent implements OnInit {
 
-  constructor() { }
+  constructor( public _dt: DatosService) {
+
+    this._dt.cargarDatos()
+      .subscribe((trabajos:any[])=>{
+        console.log(trabajos);
+      })
+
+  }
 
   ngOnInit() {
   }
