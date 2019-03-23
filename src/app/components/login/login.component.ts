@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
     this.authService.loginGoogle()
     .then((res) =>{
       //console.log(res);
-      this.router.navigate(['/feed']);
+      //aqui se hará el proceso de verificacion del usuario si es nuevo o no
+      this.router.navigate(['/crear-usuario']);
     }).catch(err => console.log(err.message));
   }
 }

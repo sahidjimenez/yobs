@@ -23,6 +23,7 @@ export class DatosService {
                                 } )
 
   }
+  
   agregarTrabajo( texto:string ){
 
     let trabajo : Trabajos ={

@@ -9,3 +9,13 @@ export interface Trabajos{
   uid?:string;
 
 }
+export interface Usuarios{
+
+  userNombre:string;
+  userEmail:string;
+  userFoto:string;
+  userUid:string;
+  tipo_user?:string;
+  isLogin:boolean;
+
+}
