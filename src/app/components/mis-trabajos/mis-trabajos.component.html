@@ -2,7 +2,8 @@
   <div class="col-md-6 mx-auto mt-3">
     <h1 class="text-center">Mis trabajo</h1>
       <div class="trabajos">
-        <div class="jumbotron jumbo">
+
+        <div class="jumbotron jumbo" *ngFor="let trabajo of _dt.datos">
           <button type="button"
                   name="button"
                   class="btn btn-primary float-right">
@@ -10,8 +11,8 @@
 
           </button>
           <div class="">
-            <h2>Titulo del trabajo</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta nulla odio perferendis inventore consequuntur labore vero consectetur minus. Totam odit est itaque sunt possimus incidunt nam sequi a minus ipsum?</p>
+            <h2>{{ trabajo.nombre_trabajo }}</h2>
+            <p>{{ trabajo.descripcion_trabajo }}</p>
             <button type="button"
                     name="button"
                     class="btn btn-primary">
@@ -19,6 +20,8 @@
             </button>
           </div>
         </div>
+
+
       </div>
   </div>
 </div>

@@ -13,9 +13,7 @@ export class MisTrabajosComponent implements OnInit {
   constructor( public _dt: DatosService) {
 
     this._dt.cargarDatos()
-      .subscribe((trabajos:any[])=>{
-        console.log(trabajos);
-      })
+      .subscribe();
 
   }
 

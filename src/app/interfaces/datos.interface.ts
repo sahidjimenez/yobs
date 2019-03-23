@@ -1,6 +1,6 @@
 
 
-export interface trabajos{
+export interface Trabajos{
 
   nombre:string;
   descripcion_trabajo:string;
