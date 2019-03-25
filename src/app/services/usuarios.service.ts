@@ -23,5 +23,17 @@ export class UsuariosService {
                                 } )
   }
 
+  crearEmpleador(){
+    let algo ={
+      userNombre:'sahid',
+      userEmail:'correo',
+      userFoto:'foto',
+      userUid:'aasgdbajskdad',
+      tipo_user:'empleador',
+      isLogin:true
+
+    }
+    this.itemsCollection.add(algo);
+  }
 
 }

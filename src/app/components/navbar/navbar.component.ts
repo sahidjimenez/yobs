@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from'../../services/auth.service';
-
+import { Usuarios } from "../../interfaces/datos.interface";
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,7 @@ import { AuthService } from'../../services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+public usuarios :Usuarios[]=[];
 
   public userNombre:string;
   public userEmail:string;

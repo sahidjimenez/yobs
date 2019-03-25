@@ -3,7 +3,8 @@ import { NgForm }  from "@angular/forms";
 
 //interfaces
 import { Trabajos }  from "../../interfaces/datos.interface";
-
+//servicios
+import { DatosService } from "../../services/datos.service";
 
 @Component({
   selector: 'app-crear',
@@ -13,12 +14,12 @@ import { Trabajos }  from "../../interfaces/datos.interface";
 export class CrearComponent implements OnInit {
 
   trabajo:Trabajos = {
-    nombre:'',
+    nombre_trabajo:'',
     descripcion_trabajo:''
 
   }
 
-  constructor() { }
+  constructor( public _dt:DatosService) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,9 @@ export class CrearComponent implements OnInit {
   guardar(){
     console.log(this.trabajo);
 
+    this._dt.agregarTrabajo(this.trabajo.nombre_trabajo, this.trabajo.descripcion_trabajo);
+    this.trabajo.nombre_trabajo='';
+    this.trabajo.descripcion_trabajo='';
   }
 
 }

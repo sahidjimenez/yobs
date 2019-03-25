@@ -23,19 +23,17 @@ export class DatosService {
                                 } )
 
   }
-  
-  agregarTrabajo( texto:string ){
+
+  agregarTrabajo( nombre:string,descripcion:string ){
 
     let trabajo : Trabajos ={
+      nombre_trabajo:nombre,
+      descripcion_trabajo:descripcion
 
-      nombre:'Demo',
-      descripcion_trabajo:texto,
-      fecha:new Date().getTime()
       //localizacion?:number,
       //uid?:string,
-
     }
-    return this.itemsCollection.add(trabajo);
+     this.itemsCollection.add( trabajo );
 
   }
 }

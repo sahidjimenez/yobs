@@ -2,7 +2,7 @@
 
 export interface Trabajos{
 
-  nombre:string;
+  nombre_trabajo:string;
   descripcion_trabajo:string;
   localizacion?:number;
   fecha?:number;
